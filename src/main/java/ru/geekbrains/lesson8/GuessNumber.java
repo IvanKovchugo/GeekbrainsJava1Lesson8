@@ -14,22 +14,20 @@ public class GuessNumber extends JFrame {
         randomNumber = (int)(Math.random() * 10) + 1; // [1 ; 10]
 
         JButton resetButton;
-        resetButton = new JButton();
-        resetButton.setText("Reset");
-        resetButton.setSize(100, 50);
-        resetButton.setLocation(0,200);
+        resetButton = new JButton("Reset");
         resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                new GuessNumber();
             }
         });
+        add(resetButton, BorderLayout.SOUTH);
 
 
         setTitle("Guess the number");
         setBounds(600, 300, 600, 140);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(false);
+        setResizable(true);
 
         textField = new JTextField();
         add(textField, BorderLayout.NORTH);
@@ -70,7 +68,7 @@ public class GuessNumber extends JFrame {
         } else {
             textField.setText("Не угадали! Загадонное число больше");
         }
-
+return;
     }
 
 }
